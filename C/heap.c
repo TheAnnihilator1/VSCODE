@@ -71,4 +71,4 @@ int main()
     cheapsort(arr, n);
     printf("Sorted array is\n");
     printArray(arr, n);
-}
+}                                                                                                                                                                                                                                                                                                          
