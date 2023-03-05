@@ -31,6 +31,7 @@ void prim(int start, int num)
 
     while (flag <= num)
     {
+        printf("%d -> ", start);
         int num1 = Arr[start].numnei;
         int arr[num1];
         for (int i = 0; i < num1; i++)
@@ -106,4 +107,6 @@ void main()
     printf("Enter the node to start from :- ");
     int start;
     scanf("%d", &start);
+
+    prim(start,num);
 }

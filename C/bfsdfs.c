@@ -21,7 +21,7 @@ void BFS(int num, int start)
 
     while (fr != rr)
     {
-        printf("%dx -> ", que[fr]);
+        printf("%d -> ", que[fr]);
         flag = que[fr];
         fr++;
 
@@ -53,7 +53,7 @@ void DFS(int num, int start)
 
     while (top > 0)
     {
-        printf("%dx -> ", stack[top - 1]);
+        printf("%d -> ", stack[top - 1]);
         flag = stack[top - 1];
         top--;
 
