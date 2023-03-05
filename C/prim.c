@@ -51,10 +51,6 @@ void prim(int start, int num)
                 flag++;
                 break;
             }
-            else if (vis[mini] != 1)
-            {
-                /* code */
-            }
         }
     }
 }
