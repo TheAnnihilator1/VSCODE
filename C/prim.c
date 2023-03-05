@@ -35,17 +35,17 @@ void prim(int start, int num)
         int arr[num1];
         for (int i = 0; i < num1; i++)
         {
-            arr[i] = Arr[start].weight[i]
+            arr[i] = Arr[start].weight[i];
         }
-        int min = min(arr,10);
+        int mini = min(arr, 10);
     }
 }
 
 /*void main()
 {
-    int arr[] = {1,20,40,50,60000,70,30,40,10,234,60};
-    int a = min(arr,10);
-    printf("Min at %d",a+1);
+    int arr[] = {1, 20, 40, 50, 60000, 70, 30, 40, 10, 234, 60};
+    int a = min(arr, 10);
+    printf("Min at %d", a + 1);
 }*/
 
 void main()
