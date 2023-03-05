@@ -11,6 +11,7 @@ struct node Arr[10];
 
 int min(int arr[], int len)
 {
+    len--;
     int min = 0;
     for (int i = 0; i < len; i++)
     {
@@ -33,15 +34,28 @@ void prim(int start, int num)
     {
         printf("%d -> ", start);
         int num1 = Arr[start].numnei;
-        int arr[num1];
+
         for (int i = 0; i < num1; i++)
         {
-            arr[i] = Arr[start].weight[i];
+            int arr[num1];
+            for (int i = 0; i < num1; i++)
+            {
+                arr[i] = Arr[start].weight[i];
+            }
+            int mini = min(arr, num1);
+
+            if (vis[mini] != 1)
+            {
+                start = Arr[start].nei[mini];
+                vis[start] = 1;
+                flag++;
+                break;
+            }
+            else if (vis[mini] != 1)
+            {
+                /* code */
+            }
         }
-        int mini = min(arr, 10);
-        start = Arr[start].nei[mini];
-        vis[start] = 1;
-        flag++;
     }
 }
 
@@ -108,5 +122,5 @@ void main()
     int start;
     scanf("%d", &start);
 
-    prim(start,num);
+    prim(start, num);
 }
