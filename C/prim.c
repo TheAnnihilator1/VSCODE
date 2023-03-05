@@ -39,6 +39,8 @@ void prim(int start, int num)
         }
         int mini = min(arr, 10);
         start = Arr[start].nei[mini];
+        vis[start] = 1;
+        flag++;
     }
 }
 
