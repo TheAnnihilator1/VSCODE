@@ -25,7 +25,7 @@ void main()
 	printf("\n");
 	for (int i = 0; i < n; i++)
 	{
-		printf("Enter price of %d  -  ", i + 1);
+		printf("Enter profit of %d  -  ", i + 1);
 		scanf("%f", &ivan[i].pris);
 		printf("Enter the weight of %d - ", i + 1);
 		scanf("%f", &ivan[i].wei);
