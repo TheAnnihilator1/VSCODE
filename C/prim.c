@@ -38,6 +38,7 @@ void prim(int start, int num)
             arr[i] = Arr[start].weight[i];
         }
         int mini = min(arr, 10);
+        start = Arr[start].nei[mini];
     }
 }
 
