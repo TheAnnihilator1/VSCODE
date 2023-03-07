@@ -23,6 +23,8 @@ int min(int arr[], int len)
     return min;
 }
 
+/*  ojpihjoghuiobb */
+
 void prim(int start, int num)
 {
     int vis[num];
