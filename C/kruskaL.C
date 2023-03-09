@@ -23,38 +23,6 @@ int min(int arr[], int len)
     return min;
 }
 
-void kruskal(int start, int num)
-{
-    int vis[num];
-    int flag = 0;
-    vis[start] = 1;
-    flag++;
-
-    while (flag <= num)
-    {
-        printf("%d -> ", start);
-        int num1 = Arr[start].numnei;
-
-        for (int i = 0; i < num1; i++)
-        {
-            int arr[num1];
-            for (int i = 0; i < num1; i++)
-            {
-                arr[i] = Arr[start].weight[i];
-            }
-            int mini = min(arr, num1);
-
-            if (vis[mini] != 1)
-            {
-                start = Arr[start].nei[mini];
-                vis[start] = 1;
-                flag++;
-                break;
-            }
-        }
-    }
-}
-
 /*void main()
 {
     int arr[] = {1, 20, 40, 50, 60000, 70, 30, 40, 10, 234, 60};
@@ -62,7 +30,7 @@ void kruskal(int start, int num)
     printf("Min at %d", a + 1);
 }*/
 
-void main()
+int main()
 {
     int num, num1;
 
@@ -113,6 +81,4 @@ void main()
         }
         printf("\n");
     }*/
-
-    kruskal(num);
 }
