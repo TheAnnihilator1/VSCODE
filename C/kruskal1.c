@@ -12,6 +12,9 @@ struct node Arr[SAX];
 
 void kruskalgal(int num)
 {
+    int vis[num];
+    int flag = 0;
+
     for (int step = 0; step < num - 1; ++step)
     {
         for (int i = 0; i < num - step - 1; ++i)
@@ -25,19 +28,38 @@ void kruskalgal(int num)
         }
     }
 
-    printf("Output \n");
+    vis[flag] = Arr[flag].v1;
+    flag++;
+    vis[flag] = Arr[flag].v2;
+    flag++;
 
     for (int i = 0; i < num; i++)
     {
-        printf("Edge %d \n", Arr[i].ed);
+        for (int j = 0; j < flag; j++)
+        {
+            if (Arr[i].v1 != vis[j])
+            {
+                vis[flag] = Arr[i].v1;
+                flag++;
+            }
+            if (Arr[i].v2 != vis[j])
+            {
+                vis[flag] = Arr[i].v2;
+                flag++;
+            }
+        }
+    }
 
-        printf("The first vertex %d \n", Arr[i].v1);
+    for (int i = 0; i < num; i++)
+    {
+        printf("Edge %d -> \n", Arr[i].ed);
+    }
 
-        printf("The second vertex %d \n", Arr[i].v2);
+    printf("\n Final Output \n");
 
-        printf("Weight %d \n", Arr[i].weight);
-
-        printf("\n");
+    for (int i = 0; i < num; i++)
+    {
+        printf("%d -> ", vis[i]);
     }
 }
 
