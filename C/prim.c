@@ -1,13 +1,14 @@
 #include <stdio.h>
+#define SAX 10
 
 struct node
 {
     int numnei;
-    int weight[10];
-    int nei[10];
+    int weight[SAX];
+    int nei[SAX];
 };
 
-struct node Arr[10];
+struct node Arr[SAX];
 
 int min(int arr[], int len)
 {
