@@ -74,6 +74,7 @@ void main()
     {
         printf("\n");
         printf("Node %d :- \n", i + 1);
+        printf("\n");
 
         printf("Enter the number of neighbours - ");
         scanf("%d", &num1);
