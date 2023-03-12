@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int n,uwu=1;
+int n = 1000, uwu = 1;
+int arr[1000];
+
 void swap(int *a, int *b)
 {
     int temp = *a;
@@ -13,7 +16,7 @@ void printArray(int arr[], int N)
     for (int i = 0; i < N; i++)
     {
         printf("%d ", arr[i]);
-    }        
+    }
     printf("\n");
 }
 
@@ -27,13 +30,14 @@ void hippy(int arr[], int N, int i)
     {
         lar = nextl;
     }
+
     if (nextr < N && arr[nextr] > arr[lar])
     {
         lar = nextr;
     }
+    uwu++;
     if (lar != i)
     {
-
         swap(&arr[i], &arr[lar]);
         hippy(arr, N, lar);
     }
@@ -48,27 +52,63 @@ void cheapsort(int arr[], int N)
     for (int i = N - 1; i >= 0; i--)
     {
         swap(&arr[0], &arr[i]);
-        printf("Case %d:-  ",uwu);
-        uwu++;
-        printArray(arr, n);
         hippy(arr, i, 0);
     }
 }
 
-int main()
+int zmain(char *input, char *output)
 {
-    printf("Enter the number of elements :-  ");
-    scanf("%d", &n);
+    int sum = 0, flag = 0, ch = 1;
+    FILE *filo = fopen(input, "w");
 
-    int arr[n];
-
-    printf("Enter the elements :-  \n");
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &arr[i]);
+        int rando = rand() % 1000 + 1;
+        fprintf(filo, "%d ", rando);
     }
-    printf("\n");
+    fclose(filo);
+
+    FILE *fili = fopen(input, "w");
+    for (int i = 0; i < n; i++)
+    {
+        fscanf(fili, "%d", &arr[i]);
+    }
+
+    fclose(fili);
+
+    uwu = 0;
     cheapsort(arr, n);
-    printf("Sorted array is\n");
-    printArray(arr, n);
-}                                                                                                                                                                                                                                                                                                          
+
+    printf("\n Number of comparisons is :- %d \n", uwu);
+
+    FILE *filoo = fopen(output, "w");
+    for (int i = 0; i < n; i++)
+    {
+        fprintf(filoo, "%d ", arr[i]);
+    }
+    fclose(filo);
+}
+
+int main()
+{
+    int sum = 0;
+    zmain("input1", "output1");
+    sum = sum + uwu;
+    uwu = 0;
+    zmain("input2", "output2");
+    sum = sum + uwu;
+    uwu = 0;
+    zmain("input3", "output3");
+    sum = sum + uwu;
+    uwu = 0;
+    zmain("input4", "output4");
+    sum = sum + uwu;
+    uwu = 0;
+    zmain("input5", "output5");
+    sum = sum + uwu;
+    uwu = 0;
+
+    int avg = sum / 5;
+
+    printf("\n Average is :- %d \n", avg);
+}
