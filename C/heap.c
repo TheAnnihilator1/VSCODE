@@ -61,6 +61,11 @@ int zmain(char *input, char *output)
     int sum = 0, flag = 0, ch = 1;
     FILE *filo = fopen(input, "w");
 
+    for (int i = 0; i < 1000; i++)
+    {
+        arr[i] = 0;
+    }
+
     for (int i = 0; i < n; i++)
     {
         int rando = rand() % 1000 + 1;
@@ -73,7 +78,6 @@ int zmain(char *input, char *output)
     {
         fscanf(fili, "%d", &arr[i]);
     }
-
     fclose(fili);
 
     uwu = 0;
