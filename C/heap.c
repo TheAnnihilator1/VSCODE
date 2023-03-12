@@ -59,15 +59,19 @@ void cheapsort(int arr[], int N)
 int zmain(char *input, char *output)
 {
     int sum = 0, flag = 0, ch = 1;
-    FILE *filo = fopen(input, "w");
+    FILE *filo = fopen(input, "rw");
 
     for (int i = 0; i < n; i++)
     {
         int rando = rand() % 1000 + 1;
-        printf("%d ",rando);
         fprintf(filo, "%d ", rando);
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = 1;
+    }
+    
     
     for (int i = 0; i < n; i++)
     {
