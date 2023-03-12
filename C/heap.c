@@ -61,24 +61,19 @@ int zmain(char *input, char *output)
     int sum = 0, flag = 0, ch = 1;
     FILE *filo = fopen(input, "w");
 
-    for (int i = 0; i < 1000; i++)
-    {
-        arr[i] = 0;
-    }
-
     for (int i = 0; i < n; i++)
     {
         int rando = rand() % 1000 + 1;
+        printf("%d ",rando);
         fprintf(filo, "%d ", rando);
     }
-    fclose(filo);
 
-    FILE *fili = fopen(input, "w");
+    
     for (int i = 0; i < n; i++)
     {
-        fscanf(fili, "%d", &arr[i]);
+        fscanf(filo, "%d", &arr[i]);
     }
-    fclose(fili);
+    fclose(filo);
 
     uwu = 0;
     cheapsort(arr, n);
@@ -90,7 +85,7 @@ int zmain(char *input, char *output)
     {
         fprintf(filoo, "%d ", arr[i]);
     }
-    fclose(filo);
+    fclose(filoo);
 }
 
 int main()
